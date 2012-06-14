@@ -1,0 +1,14 @@
+These are some example datasets.
+
+simple ....... simple made-up input, also used in the synopsis in the User's Guide
+complex ...... more complex (yet also made-up) input, shows well how fragment assembly works
+rhodo ........ several exons from genes coding for rhodopsins in three different organisms
+               (one of them being human); these genes therefore have similarities;
+	       shows that pairwise alignment using *unbanded* Smith-Waterman can get pretty
+               slow (quadratic complexity)
+mouse ........ some salivary ESTs (expressed sequence tags - pieces of DNA restored from already
+               translated messenger RNA) from the organism Mus Muscullus. These are some
+	       randomly selected ESTs, so only few are actually similar. That is actually
+	       quite common with ESTs.
+	       
+Source for the rhodo and mouse datasets: the NCBI site (http://www.ncbi.nlm.nih.gov)

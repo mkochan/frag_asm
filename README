@@ -1,0 +1,40 @@
+frag_asm (A SIMPLE FRAGMENT ASSEMBLY PROGRAM.) Version 1.00.
+by Martin Kochan (mkochan@ksu.edu), 2005
+Work for the course "Implementation Project" at Kansas State University, taken Spring 2005
+-----------------------------------------------------------------------------------------------
+
+This is a fragment assemly program. Only source code is provided, you need to compile it
+first. To compile, ocamlc (the OCaml compiler) is required -- if you have OCaml installed,
+this should not be a problem.
+
+If you don't have OCaml, you can download it at:  http://caml.inria.fr
+
+Next, see the "Compilation" section below.
+
+=====Files:=====
+
+frag_asm.ml   \ ........ source files in the OCaml functional language
+similarity.ml /
+
+Makefile ............... see next section for compilation instructions
+
+doc/users_guide.pdf .... guide for the casual user 
+doc/frag_asm.pdf ....... an informal treatment of programming methods used
+
+example-data/ .......... a directory containing four datasets for experimentation
+example-data/README .... a file describing the datasets
+
+=====Compilation - run the following commands:=====
+
+make all ............... to build the executable frag_asm (requires ocamlc!!)
+make clean ............. to remove the ocaml bytecode files generated during the build
+
+=====Quick start (*AFTER* compilation)=====
+
+Read users_guide.pdf (especially if you don't know what fragment assembly is)
+  
+  OR
+  
+1. Copy the file example-data/simple.dat to this directory
+2. Run the command "./frag_asm simple.dat simple.contigs simple.progress"
+3. Look into the files 'simple.contigs' and 'simple.progress'

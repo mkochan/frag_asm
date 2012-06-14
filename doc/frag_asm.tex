@@ -1,0 +1,164 @@
+\documentclass[11pt, oneside]{article}
+\title{Fragment assembly:\\ An implementation in Ocaml}
+\author{Martin Kochan ({\tt mkochan@ksu.edu})}
+\date{25 November, 2005}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This text serves as a brief description of methods used in the OCaml program it accompanies.
+It is descriptive rather than analytic; there is not much attempt at formalism.
+After reading it, the reader should be much better able to understand the code.
+In fact, reading the code will likely not uncover many more new significant ideas than
+those already contained here.
+The reader needs to have experience with programming in OCaml and/or SML
+and should understand the workings of the Smith--Waterman algorithm.
+\end{abstract}
+
+\section{Problem statement}
+
+We are given an array $sa$ of sequences of characters {\tt A}, {\tt G}, {\tt C}, {\tt T}. 
+Let us call these sequences \emph{reads}.
+
+We are to produce a list of \emph{contigs}, which represent parts of this target sequence.
+
+\section{Contigs}
+
+Our definition of contig is that it is a group of sequences that have high local similarities,
+ie. are partly overlapping. A contig is represented as a layout of these sequneces.
+In a layout, the strings are mutually aligned thus characters contributing to better
+local similarities are found in one column.~
+\footnote{
+We could also define the contig as the resulting \emph{consensus sequence} stemming
+from the layout. But here please consider the above definition. 
+}
+
+In the OCaml code, a contig is represented as:
+\begin{verbatim}
+type contig = int * layout   (* contig id, and it's layout*)
+and layout = layout_row list
+and layout_row = {i : int; shift : int; chs : char list}
+\end{verbatim}
+Besides from having some id, a contig is represented by it's layout, as explained above.
+A layout is simply a list of
+{\tt layout\_row}s, each of them shifted {\tt shift} characters to the right in respect to
+a \emph{reference row} --- one row is guaranteed to have a shift of zero.
+The attribute {\tt i} says whose read ($i$-th read) the row is a laid-out form of. 
+The attribute {\tt chs} then enumerates char-by-char the row, with gaps introduced
+at some positions.
+
+\section{The process}
+
+Fragment assembly is performed as sequence of these steps:
+
+\begin{enumerate}
+\item
+Read $n$ input strings (or \emph{reads}).
+Make each string be contained in a single-item contig, or \emph{singlet}.
+\item
+(Preprocessing.)
+Determine the pairs of reads with significant \emph{local} similarity. That is,
+create a graph whose vertices are the reads and whose edges are the pairs with significant
+local similarity.
+\item
+Sort these edges into a list in decreasing order of local similarity scores. 
+\item
+Begin and keep reading the list of edges until empty and perform the following with every
+newly read edge $(i,j)$:  
+ \begin{itemize}
+ \item Determine which contig $c_i$ contains the read $i$.
+ \item Determine which contig $c_j$ contains the read $j$.
+ \item Merge $c_i$ and $c_j$ into a new contig $c'$, {\bf so that the reads $i$ and $j$ are
+       laid out in optimal pairwise alignment.} 
+ \end{itemize}
+\item
+Finally we have a set of contigs, each of them containing one or more reads, and no read
+appearing in two distinct contigs.
+\end{enumerate}
+
+\subsection{Optimization for step 2.}
+
+It turns out that to produce the similarity graph rigorously would require
+$O(mn^2) \subseteq O(n^2)$ time (assuming some average read length $m$). This is impractical for
+large $n$ (which is common), hence we use a heuristic which runs in $O(nm)$ time.
+
+This heuristic makes use of so-called \emph{n-mers}.
+\footnote{This notion was first used in PHRAP, a popular fragment assembly program.} 
+The regions of high similarity in locally aligned sequences usually contain at their
+center an interval called \emph{n-mer} with 100\% identity and no gaps. Usually $n \geq 14$.
+
+Hence our optimization goes as follows:
+We gradually identify all subsequences of reads of length 14 --- called \emph{14-mers} --- and
+create a hash, say, $H_{14\_mers}$, that assigns to any 14-character string $s$ a list of
+it's occurences across all reads.
+
+Thus all 14-mers in $H_{14\_mers}$ that appear in more that one read actually imply that
+{\bf their ``owner'' reads will be mutually connected by edges in the similarity graph.} 
+
+\subsection{Note on merging of contigs (in step 4.)}
+
+Arguably the most important stage of the process is the merging of contigs.
+
+Imagine we have just read an edge $E = (i,j)$ from the list of edges in the similarity graph.  
+We wish to merge two contigs, $c_i$ and $c_j$ that contain the reads $i$ and $j$, into
+a ``common'' contig $c'$.
+
+As a trivial case, if $c_i = c_j$, then $c' = c_i = c_j$ is already merged.
+The contigs are equivalent whenever their id's are equal.
+
+What if $c_i \neq c_j$? 
+First recall that contigs have id's. We can simply make the id of $c'$ to be the id of $c_i$.
+That will assure that every contig has a unique name
+(remember that initially, every read has been assigned a unique contig --- a singlet).
+
+But the main question is that of merging the layouts --- let's call them $l_i$ and $l_j$, the
+resulting layout being $l'$. Say we identified the rows $r_i$ and $r_j$ that represent
+$i$ and $j$, respectively. In $c'$, we want these two rows to be well-aligned along regions
+of high local similarity.
+We do something like this:
+\begin{enumerate}
+ \item
+ Perform \emph{gapped Smith--Waterman}
+ \footnote{The ``gapped'' here is my extension of the well-known Smith--Waterman algorithm.}
+ alignment of $r_i$ and $r_j$:
+ \begin{itemize}
+  \item Find best \emph{local} pairwise alignment between $r_i$ and $r_j$.
+        Note that the original rows already may contain gaps at some places ---
+	those are to be considered as wildcards
+        \footnote{This actually is my ``gapped'' extension.}.
+  \item Connect the remaining lower-quality parts of $r_i$ and $r_j$ to the pairwise alignment.  
+ \end{itemize}
+ \item
+ If the similarity score in the pairwise alignment was below certain threshold,
+ terminate this routine and disregard the edge $(i,j)$!
+ \footnote{This has to be, since our preprocessing using \emph{14-mers} was just a heuristic.}
+ \item
+ By adding new gaps to into the aligned rows, the remaining rows in both layouts contain their
+ letters at positions inconsistent with those in the new rows!
+ Thus we add the new gaps into proper columns in both layouts.
+ \item
+ We shift the rows in $l_j$ so that the above-obtained shift is followed in $l'$ as well, and
+ so that $r_i$ becomes the reference row in $l'$.  
+ Thus the layouts become ``synchronized''.
+ \item Finally, concatenate the synchronized layouts.  
+\end{enumerate}
+
+{\bf Scoring local similarity.}
+In gapped Smith--Waterman, the scores for gapped sequences $r_i$ and $r_j$ are determined
+using a function $s(x,y)$, where $x$ and $y$ are some characters of $r_i$ and $r_j$, respectively: 
+$$
+s(x,y) = 
+  \left\{
+     \begin{array}{ll}
+     1 & \textrm{if $x = $y}\\
+     1 & \textrm{if $x$ or $y$ is a gap} \\
+     -1 & \textrm{if $x \neq $y}
+
+     \end{array}
+  \right.
+$$
+Thus a gap really works as a wildcard.
+\emph{However, a prize for \emph{adding} a gap into the alignment is -3!}
+
+\end{document}

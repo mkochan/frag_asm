@@ -1,0 +1,35 @@
+Contig #3:
+cccccctattcgatttttgggggggacatt (3) 
++++++ 
+Contig #4:
+gctacgatcgatgctagtgctgtaccccccccctattcgatttttggggacaatttttggcccaa (4) 
+====> 
+Contig #3:
+                           cccccctattcgatttttgggggggacatt (3) 
+gctacgatcgatgctagtgctgtaccccccccctattcgatttttggggacaatttttggcccaa (4) 
+----------------
+
+Contig #0:
+cagctagctactgcatcgatgctaccgatcgtaagcccacaccacac (0) 
++++++ 
+Contig #1:
+acgtaggcgctagggctatgctaggctgcggtacgatgccctcgatcgtaagcccacacc (1) 
+====> 
+Contig #0:
+                 cagcta-gctactgcatcgatgctaccgatcgtaagcccacaccacac (0) 
+acgtaggcgctagggctatgctaggctgcggta-cgatgccctcgatcgtaagcccacacc (1) 
+----------------
+
+Contig #0:
+acgtaggcgctagggctatgctaggctgcggta-cgatgccctcgatcgtaagcccacacc (1) 
+                 cagcta-gctactgcatcgatgctaccgatcgtaagcccacaccacac (0) 
++++++ 
+Contig #2:
+ggtacgatgctcgatcgtaagcccggtgctagctagcatcgatgctagctagct (2) 
+====> 
+Contig #0:
+acgtaggcgctagggctatgctaggctgcggta-cgatgccctcgatcgtaagcccacacc (1) 
+                 cagcta-gctactgcatcgatgctaccgatcgtaagcccacaccacac (0) 
+                             ggta-cgatg--ctcgatcgtaagcccggtgctagctagcatcgatgctagctagct (2) 
+----------------
+

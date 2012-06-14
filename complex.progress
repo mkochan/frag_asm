@@ -1,0 +1,179 @@
+Contig #5:
+ctagctagctattcgtagctgctagctagtcgatctatcgtaaggctagctatca (5) 
++++++ 
+Contig #6:
+gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+====> 
+Contig #5:
+ctagctagctattcgtagctgctagctagtcgatctatcgtaaggctagctatca (5) 
+                    gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+----------------
+
+Contig #12:
+tagctagtcatgctatcgtagtcgtagtcgtagctagtcgtgtgctttagcgagtcggcagtcgatcgcgatgctagca (12) 
++++++ 
+Contig #15:
+gtgtgtcgtagctagtcgatcgatgctagcatgcatgctagcagtgctttagcgagtcgtaccactagtcagatgctagca (15) 
+====> 
+Contig #12:
+  tagctagtcatgctatcgtagtcgtagtcgtagctagtcgtgtgctttagcgagtcggcagtcgatcgcgatgctagca (12) 
+gtgtgtcgtagctagtcgatcgatgctagcatgcatgctagcagtgctttagcgagtcgtaccactagtcagatgctagca (15) 
+----------------
+
+Contig #5:
+                    gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+ctagctagctattcgtagctgctagctagtcgatctatcgtaaggctagctatca (5) 
++++++ 
+Contig #7:
+ggctagtcgtgctgcatgtgctgggtcgtatcgtagctagctagcacagctagctagtcgatctatcgtaag (7) 
+====> 
+Contig #5:
+                                                gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+                            ctagctagctattcgtagctgctagctagtcgatctatcgtaaggctagctatca (5) 
+ggctagtcgtgctgcatgtgctgggtcgtatcgtagctagctagcacagctagctagtcgatctatcgtaag (7) 
+----------------
+
+Contig #1:
+ggctagctagcatgctagctagctagctagctacgatgctaagccaactccgcgccggcatttttcgtagcctccacaccgggcgatcctc (1) 
++++++ 
+Contig #9:
+ggcgtagtcgtatctaggcatcatgcattcatcgtgtctagcgacagcgacagctagctagctgatcgatgctagctagctagctagc (9) 
+====> 
+Contig #1:
+                                                       ggctagct-agc-atgctagctagctagctagctacgatgctaagccaactccgcgccggcatttttcgtagcctccacaccgggcgatcctc (1) 
+ggcgtagtcgtatctaggcatcatgcattcatcgtgtctagcgacagcgacagctagctagctgatcgatgctagctagctagctagc (9) 
+----------------
+
+Contig #2:
+gctagctgtagctagctagtcgatctagctagtggctgaggctggttcggcttcagcgtcgacgatcagcgatttaggcgcta (2) 
++++++ 
+Contig #5:
+ggctagtcgtgctgcatgtgctgggtcgtatcgtagctagctagcacagctagctagtcgatctatcgtaag (7) 
+                                                gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+                            ctagctagctattcgtagctgctagctagtcgatctatcgtaaggctagctatca (5) 
+====> 
+Contig #2:
+                                       gctagctgtagctagctagtcgatctagctagtggctgaggctggttcggcttcagcgtcgacgatcagcgatttaggcgcta (2) 
+ggctagtcgtgctgcatgtgctgggtcgtatcgtagctagctagc-acagctagctagtcgatctatcgtaag (7) 
+                                                 gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+                            ctagctagctattcgta-gctgctagctagtcgatctatcgtaaggctagctatca (5) 
+----------------
+
+Contig #2:
+ggctagtcgtgctgcatgtgctgggtcgtatcgtagctagctagc-acagctagctagtcgatctatcgtaag (7) 
+                                       gctagctgtagctagctagtcgatctagctagtggctgaggctggttcggcttcagcgtcgacgatcagcgatttaggcgcta (2) 
+                                                 gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+                            ctagctagctattcgta-gctgctagctagtcgatctatcgtaaggctagctatca (5) 
++++++ 
+Contig #14:
+gtgctttagcgcagctagtgatgcgatgctagcagctatgctagtagctctacgtagatcgtagctagctagcatgcta (14) 
+====> 
+Contig #2:
+                            ggctagtcgtgctgcatgtgctgggtcgtatcgtagctagctagc-acagctagctagtcgatctatcgtaag (7) 
+                                                                   gctagctgtagctagctagtcgatctagctagtggctgaggctggttcggcttcagcgtcgacgatcagcgatttaggcgcta (2) 
+                                                                             gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+                                                        ctagctagctattcgta-gctgctagctagtcgatctatcgtaaggctagctatca (5) 
+gtgctttagcgcagctagtgatgcgatgctagcagctatgctagtagctctacgtagatcgtagctagctagcatgcta (14) 
+----------------
+
+Contig #1:
+ggcgtagtcgtatctaggcatcatgcattcatcgtgtctagcgacagcgacagctagctagctgatcgatgctagctagctagctagc (9) 
+                                                       ggctagct-agc-atgctagctagctagctagctacgatgctaagccaactccgcgccggcatttttcgtagcctccacaccgggcgatcctc (1) 
++++++ 
+Contig #10:
+gcatcgtagctagctgtgctatgctagcgatgctagctagctagtcgtagtcgtgctatcgagctcaggtcagtcatcatcgtagt (10) 
+====> 
+Contig #1:
+ggcgtagtcgtatctaggcatcatgcattcatcgtgtctagcgacagcgacagctagctagctgatcgatgctagcta-gctagctagc (9) 
+                                                       ggctagct-agc-atgctagcta-gctagctagctacgatgctaagccaactccgcgccggcatttttcgtagcctccacaccgggcgatcctc (1) 
+                                                gcatcgtagctagctgtgctatgctagcgatgctagctagctagtcgtagtcgtgctatcgagctcaggtcagtcatcatcgtagt (10) 
+----------------
+
+Contig #1:
+                                                       ggctagct-agc-atgctagcta-gctagctagctacgatgctaagccaactccgcgccggcatttttcgtagcctccacaccgggcgatcctc (1) 
+ggcgtagtcgtatctaggcatcatgcattcatcgtgtctagcgacagcgacagctagctagctgatcgatgctagcta-gctagctagc (9) 
+                                                gcatcgtagctagctgtgctatgctagcgatgctagctagctagtcgtagtcgtgctatcgagctcaggtcagtcatcatcgtagt (10) 
++++++ 
+Contig #2:
+gtgctttagcgcagctagtgatgcgatgctagcagctatgctagtagctctacgtagatcgtagctagctagcatgcta (14) 
+                            ggctagtcgtgctgcatgtgctgggtcgtatcgtagctagctagc-acagctagctagtcgatctatcgtaag (7) 
+                                                                   gctagctgtagctagctagtcgatctagctagtggctgaggctggttcggcttcagcgtcgacgatcagcgatttaggcgcta (2) 
+                                                                             gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+                                                        ctagctagctattcgta-gctgctagctagtcgatctatcgtaaggctagctatca (5) 
+====> 
+Contig #1:
+                                                       ggctagct-agc-atgctagcta-gctagctagctacgatgctaagccaactccgcgccggcatttttcgtagcctccacaccgggcgatcctc (1) 
+ggcgtagtcgtatctaggcatcatgcattcatcgtgtctagcgacagcgacagctagctagctgatcgatgctagcta-gctagctagc (9) 
+                                                gcatcgtagctagctgtgctatgctagcgatgctagctagctagtcgtagtcgtgctatcgagctcaggtcagtcatcatcgtagt (10) 
+                    gtgctttagcgcagctagtgatgcgatgctagcagctatgctagtagctctacgtagatcgtagctagctagcatgcta (14) 
+                                                ggctagtcgtgctgcatgtgctgggtcgtatcgtagctagctagc-acagctagctagtcgatctatcgtaag (7) 
+                                                                                       gctagctgtagctagctagtcgatctagctagtggctgaggctggttcggcttcagcgtcgacgatcagcgatttaggcgcta (2) 
+                                                                                                 gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+                                                                            ctagctagctattcgta-gctgctagctagtcgatctatcgtaaggctagctatca (5) 
+----------------
+
+Contig #11:
+gctagtgtgctgtgtgtgtagcagtctagcagctgatgcatctagtcagctagctatcacgatgcatgctagcagtcatcagctatg (11) 
++++++ 
+Contig #12:
+gtgtgtcgtagctagtcgatcgatgctagcatgcatgctagcagtgctttagcgagtcgtaccactagtcagatgctagca (15) 
+  tagctagtcatgctatcgtagtcgtagtcgtagctagtcgtgtgctttagcgagtcggcagtcgatcgcgatgctagca (12) 
+====> 
+Contig #11:
+gctagtgtgctgtgtgtgtagcagtctagcagctgatgcatctagtcagctagctatcacgatgcatgctagcagtcatcagctatg (11) 
+                              gtgtgtcgtagctagtc-gatcgatgctagcatgcatgctagcagtgctttagcgagtcgtaccactagtcagatgctagca (15) 
+                                tagctagtcatgcta-tcgtagtcgtagtcgtagctagtcgtgtgctttagcgagtcggcagtcgatcgcgatgctagca (12) 
+----------------
+
+Contig #13:
+gtgctttagtgatcgatgctagcgatgcgatgctagcacgctagtcgatcgtagtcgtgtgcggtagtcgagtcgtagctatc (13) 
++++++ 
+Contig #1:
+                    gtgctttagcgcagctagtgatgcgatgctagcagctatgctagtagctctacgtagatcgtagctagctagcatgcta (14) 
+                                                       ggctagct-agc-atgctagcta-gctagctagctacgatgctaagccaactccgcgccggcatttttcgtagcctccacaccgggcgatcctc (1) 
+ggcgtagtcgtatctaggcatcatgcattcatcgtgtctagcgacagcgacagctagctagctgatcgatgctagcta-gctagctagc (9) 
+                                                gcatcgtagctagctgtgctatgctagcgatgctagctagctagtcgtagtcgtgctatcgagctcaggtcagtcatcatcgtagt (10) 
+                                                ggctagtcgtgctgcatgtgctgggtcgtatcgtagctagctagc-acagctagctagtcgatctatcgtaag (7) 
+                                                                                       gctagctgtagctagctagtcgatctagctagtggctgaggctggttcggcttcagcgtcgacgatcagcgatttaggcgcta (2) 
+                                                                                                 gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+                                                                            ctagctagctattcgta-gctgctagctagtcgatctatcgtaaggctagctatca (5) 
+====> 
+Contig #13:
+                             gtgctttagtgat-cgatgctagcgatgcgatgctagca-cgcta-gtcgatcgtagtcgtgtgcggtagtcgagtcgtagctatc (13) 
+                    gtgctttagcgcagctagtgatgcgatgctagc-a-gctatgctagtagctctacgtagatcgtagctagctagcatgcta (14) 
+                                                         ggctagct-agc-atgctagcta-gctagctagctacgatgctaagccaactccgcgccggcatttttcgtagcctccacaccgggcgatcctc (1) 
+ggcgtagtcgtatctaggcatcatgcattcatcgtgtctagcgacagcgacag-c-tagctagctgatcgatgctagcta-gctagctagc (9) 
+                                                gcatc-g-tagctagctgtgctatgctagcgatgctagctagctagtcgtagtcgtgctatcgagctcaggtcagtcatcatcgtagt (10) 
+                                                ggcta-g-tcgtgctgcatgtgctgggtcgtatcgtagctagctagc-acagctagctagtcgatctatcgtaag (7) 
+                                                                                         gctagctgtagctagctagtcgatctagctagtggctgaggctggttcggcttcagcgtcgacgatcagcgatttaggcgcta (2) 
+                                                                                                   gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+                                                                              ctagctagctattcgta-gctgctagctagtcgatctatcgtaaggctagctatca (5) 
+----------------
+
+Contig #8:
+gctagctagctttagctatctagtctagctagtcgagtcgatgctagcgatctattatgctagctacgatgcacgatgcaggctagctagt (8) 
++++++ 
+Contig #13:
+                             gtgctttagtgat-cgatgctagcgatgcgatgctagca-cgcta-gtcgatcgtagtcgtgtgcggtagtcgagtcgtagctatc (13) 
+                    gtgctttagcgcagctagtgatgcgatgctagc-a-gctatgctagtagctctacgtagatcgtagctagctagcatgcta (14) 
+                                                         ggctagct-agc-atgctagcta-gctagctagctacgatgctaagccaactccgcgccggcatttttcgtagcctccacaccgggcgatcctc (1) 
+ggcgtagtcgtatctaggcatcatgcattcatcgtgtctagcgacagcgacag-c-tagctagctgatcgatgctagcta-gctagctagc (9) 
+                                                gcatc-g-tagctagctgtgctatgctagcgatgctagctagctagtcgtagtcgtgctatcgagctcaggtcagtcatcatcgtagt (10) 
+                                                ggcta-g-tcgtgctgcatgtgctgggtcgtatcgtagctagctagc-acagctagctagtcgatctatcgtaag (7) 
+                                                                                         gctagctgtagctagctagtcgatctagctagtggctgaggctggttcggcttcagcgtcgacgatcagcgatttaggcgcta (2) 
+                                                                                                   gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+                                                                              ctagctagctattcgta-gctgctagctagtcgatctatcgtaaggctagctatca (5) 
+====> 
+Contig #8:
+      gctagctagctttagctatctagtctagctagtcgagtcgatgctagcgatctattatgctagctacgatgcacgatgcaggctagctagt (8) 
+                             gtgctttagt-gat-cgatgctagcgatgcgatgctagca-cgcta-gtcgatcgtagtcgtgtgcggtagtcgagtcgtagctatc (13) 
+                    gtgctttagcgcagctagt-gatgcgatgctagc-a-gctatgctagtagctctacgtagatcgtagctagctagcatgcta (14) 
+                                                          ggctagct-agc-atgctagcta-gctagctagctacgatgctaagccaactccgcgccggcatttttcgtagcctccacaccgggcgatcctc (1) 
+ggcgtagtcgtatctaggcatcatgcattcatcgtgtct-agcgacagcgacag-c-tagctagctgatcgatgctagcta-gctagctagc (9) 
+                                                 gcatc-g-tagctagctgtgctatgctagcgatgctagctagctagtcgtagtcgtgctatcgagctcaggtcagtcatcatcgtagt (10) 
+                                                 ggcta-g-tcgtgctgcatgtgctgggtcgtatcgtagctagctagc-acagctagctagtcgatctatcgtaag (7) 
+                                                                                          gctagctgtagctagctagtcgatctagctagtggctgaggctggttcggcttcagcgtcgacgatcagcgatttaggcgcta (2) 
+                                                                                                    gctagctagtcgatctatcgtaaggctagcatgctagtcgatctagtcgtatattttatagctagcttacgtagctag (6) 
+                                                                               ctagctagctattcgta-gctgctagctagtcgatctatcgtaaggctagctatca (5) 
+----------------
+

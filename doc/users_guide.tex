@@ -1,0 +1,133 @@
+\documentclass[11pt, oneside]{article}
+\title{{\tt frag\_asm}: User's guide}
+\author{Martin Kochan ({\tt mkochan@ksu.edu})}
+\date{25 November, 2005}
+
+\begin{document}
+\maketitle
+
+\section{Description}
+
+This program performs simple DNA fragment assembly. 
+It was written as part of the ``Implementation Project'' course taken by the author
+at Kansas State University, Manhattan, Kansas, in Spring 2005.
+The current version is 1.00.
+
+\section{Motivation}
+
+DNA that may be several thousand bases (characters) long. It is impossible to read the whole
+string at one time with current technology. However, a method called \emph{shotgun sequencing}
+is capable of reading strings of limited length (up to several hundred bases) that are taken at
+random places in the original string. These \emph{reads} often contain reading errors, such as
+point mutations (changes of characters), additions (when a meaningless character is added), and
+deletions (when a meaningful character is deleted).
+
+From these reads, we want to assemble longest possible contiguous segments of the original long
+string, called \emph{contigs}. We must account for reading errors!
+
+\section{Synopsis}
+
+The command line looks like:
+\begin{verbatim}
+./frag_asm seqs.dat seqs.out seqs.progress 
+\end{verbatim}
+
+The contents of file {\tt seqs.dat} (input sequences, one per line, separated
+by newlines or whitespaces) are:
+\small
+\begin{verbatim}
+cagctagctactgcatcgatgctaccgatcgtaagcccacaccacac        
+acgtaggcgctagggctatgctaggctgcggtacgatgccctcgatcgtaagcccacacc
+ggtacgatgctcgatcgtaagcccggtgctagctagcatcgatgctagctagct
+cccccctattcgatttttgggggggacatt
+gctacgatcgatgctagtgctgtaccccccccctattcgatttttggggacaatttttggcccaa
+gctagc
+\end{verbatim} 
+\normalsize
+
+The output file produced {\tt seqs.dat} then is:
+\scriptsize
+\begin{verbatim}
+THERE ARE 6 READS.
+
+Contig #0:
+acgtaggcgctagggctatgctaggctgcggta-cgatgccctcgatcgtaagcccacacc (1) 
+                 cagcta-gctactgcatcgatgctaccgatcgtaagcccacaccacac (0) 
+                             ggta-cgatg--ctcgatcgtaagcccggtgctagctagcatcgatgctagctagct (2) 
+
+Contig #3:
+                           cccccctattcgatttttgggggggacatt (3) 
+gctacgatcgatgctagtgctgtaccccccccctattcgatttttggggacaatttttggcccaa (4) 
+
+Contig #5:
+gctagc (5) 
+\end{verbatim}
+\normalsize
+
+The progress of the assembly is recorded along with the output, and is found
+in the file {\tt seqs.progress}. Note that the {\tt +++++} sign means
+merging of contigs and {\tt ====>} means ``the resulting contig follows.''
+Note that resulting contigs always take name of the first ``operand'' in the merging operation.
+At the beginning, all reads had their own contigs --- or \emph{singlets}.  
+
+\scriptsize
+\begin{verbatim}
+Contig #3:
+cccccctattcgatttttgggggggacatt (3) 
++++++ 
+Contig #4:
+gctacgatcgatgctagtgctgtaccccccccctattcgatttttggggacaatttttggcccaa (4) 
+====> 
+Contig #3:
+                           cccccctattcgatttttgggggggacatt (3) 
+gctacgatcgatgctagtgctgtaccccccccctattcgatttttggggacaatttttggcccaa (4) 
+----------------
+
+Contig #0:
+cagctagctactgcatcgatgctaccgatcgtaagcccacaccacac (0) 
++++++ 
+Contig #1:
+acgtaggcgctagggctatgctaggctgcggtacgatgccctcgatcgtaagcccacacc (1) 
+====> 
+Contig #0:
+                 cagcta-gctactgcatcgatgctaccgatcgtaagcccacaccacac (0) 
+acgtaggcgctagggctatgctaggctgcggta-cgatgccctcgatcgtaagcccacacc (1) 
+----------------
+
+Contig #0:
+acgtaggcgctagggctatgctaggctgcggta-cgatgccctcgatcgtaagcccacacc (1) 
+                 cagcta-gctactgcatcgatgctaccgatcgtaagcccacaccacac (0) 
++++++ 
+Contig #2:
+ggtacgatgctcgatcgtaagcccggtgctagctagcatcgatgctagctagct (2) 
+====> 
+Contig #0:
+acgtaggcgctagggctatgctaggctgcggta-cgatgccctcgatcgtaagcccacacc (1) 
+                 cagcta-gctactgcatcgatgctaccgatcgtaagcccacaccacac (0) 
+                             ggta-cgatg--ctcgatcgtaagcccggtgctagctagcatcgatgctagctagct (2) 
+----------------
+\end{verbatim}
+\normalsize
+
+\section{Notes}
+
+The program solves the above-mentioned problem only partly (with many simplifications
+adopted) and certainly not optimally. To make account of the most significant facts:
+\begin{itemize}
+\item
+  Heuristical preprocessing of reads is performed, based on \emph{14-mers}.
+  It makes linear-time guess about which reads to put into common contig.  
+\item
+  Alignment of reads is done using gapped Smith--Waterman. Currently there is no support for banded
+  Smith--Waterman, although generation of bands' positions is already implemented internally.  
+  To continue along these lines would make for a good optimization. 
+\item
+  Input must be simple DNA strings delimited by newlines or spaces. Inputs shorter than 14 bases
+  are guaranteed to remain singlets. No other chars besides {\tt AGCT} or {\tt agct} are allowed.
+\item
+  Output is given in form of layouts rather than consensus sequences, for didactic reasons.
+\item
+  Currently, complementary strands are not supported.
+\end{itemize}
+
+\end{document}
